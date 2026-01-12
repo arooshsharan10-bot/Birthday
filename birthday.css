@@ -1,0 +1,150 @@
+/* Page styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle, #00c8ff, #2900f8);
+  font-family: 'Segoe UI', 'Comic Sans MS', cursive;
+  text-align: center;
+  overflow: hidden;
+  border: 15px solid #ff69b4;
+  box-sizing: border-box;
+  animation: borderGlow 3s infinite alternate;
+}
+
+/* Glowing border animation */
+@keyframes borderGlow {
+  from { box-shadow: 0 0 20px #ff69b4, inset 0 0 20px #ff69b4; }
+  to   { box-shadow: 0 0 40px #ff1493, inset 0 0 40px #ff1493; }
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Heading */
+h1 {
+  font-size: 40px;
+  color: #fff;
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff69b4; }
+  to   { text-shadow: 0 0 20px #ff1493; }
+}
+
+/* Photo */
+.photo {
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Message */
+#message {
+  color: #fff;
+  font-size: 30px;
+  margin: 20px auto;
+  max-width: 600px;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* Button */
+button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff1493;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Cake */
+.cake {
+  position: relative;
+  margin: 40px auto;
+  width: 200px;
+  height: 200px;
+}
+
+.plate {
+  width: 220px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+}
+
+.layer {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+}
+
+.layer-bottom { bottom: 20px; background: #ff99cc; }
+.layer-middle { bottom: 70px; background: #ff66b2; }
+.layer-top    { bottom: 120px; background: #ff3385; }
+
+.candle {
+  width: 20px;
+  height: 60px;
+  background: #fff;
+  position: absolute;
+  left: 90px;
+  bottom: 180px;
+}
+
+.candle::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 5px;
+  width: 10px;
+  height: 20px;
+  background: orange;
+  border-radius: 50%;
+  animation: flicker 0.3s infinite alternate;
+  box-shadow: 0 0 20px gold, 0 0 40px orange;
+}
+
+@keyframes flicker {
+  from { background: orange; transform: scaleY(1); }
+  to   { background: gold; transform: scaleY(1.2); }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Confetti canvas */
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
